@@ -30,4 +30,26 @@ function playRound(computerChoice, playerChoice){
     }
 }
 
-console.log(getComputerChoice())
+function playGame(){
+    let playerWins = 0
+    let computerWins = 0
+    for(let i = 0; i <= 5; i ++){
+        let round = playRound(getComputerChoice(),prompt())
+        console.log(round)
+        if(round == "You Lose"){
+            computerWins ++
+        }
+        else{
+            playerWins ++
+        }
+    }
+    if(playerWins > computerWins){
+        console.log("Player Wins")
+    }
+    else{
+        console.log("Computer Wins")
+    }
+}
+
+playGame()
+
