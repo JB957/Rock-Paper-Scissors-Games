@@ -13,8 +13,10 @@ function getComputerChoice(){
 }
 
 function playRound(computerChoice, playerChoice){
-    let playerChoice = playerChoice.lower
-    let computerChoice = computerChoice.lower
+    playerChoice = playerChoice.toLowerCase()
+    computerChoice = computerChoice.toLowerCase()
+
+
 
     if(playerChoice == "rock" && computerChoice == "paper"){
         return "You Lose, Paper beats Rock"
@@ -33,10 +35,9 @@ function playRound(computerChoice, playerChoice){
 function playGame(){
     let playerWins = 0
     let computerWins = 0
-    for(let i = 0; i <= 5; i ++){
-        let round = playRound(getComputerChoice(),prompt())
-        console.log(round)
-        if(round == "You Lose"){
+    for(let i = 0; i < 5; i ++){
+        let round = playRound(getComputerChoice(), prompt())
+        if(round.includes("You Lose")){
             computerWins ++
         }
         else{
