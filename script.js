@@ -12,4 +12,22 @@ function getComputerChoice(){
     }
 }
 
+function playRound(computerChoice, playerChoice){
+    let playerChoice = playerChoice.lower
+    let computerChoice = computerChoice.lower
+
+    if(playerChoice == "rock" && computerChoice == "paper"){
+        return "You Lose, Paper beats Rock"
+    }
+    else if(playerChoice == "scissor" && computerChoice == "rock"){
+        return "You Lose, Rock Beat scissor"
+    }
+    else if(playerChoice == "paper" && computerChoice == "scissor"){
+        return "You Lose, Scissors Beats Paper"
+    }
+    else{
+        return "You Win"
+    }
+}
+
 console.log(getComputerChoice())
